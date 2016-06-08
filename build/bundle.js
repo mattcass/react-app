@@ -135,7 +135,7 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/matthew/projects/code/snippets/react-app/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/matthew/projects/code/snippets/react-app/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/matthew/projects/code/hackz/application/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/matthew/projects/code/hackz/application/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
 	'use strict';
 
@@ -151,17 +151,19 @@
 	  return obj && obj.__esModule ? obj : { default: obj };
 	}
 
+	__webpack_require__(210);
+
 	var App = _react2.default.createClass({
 	  displayName: 'App',
 	  render: function render() {
-	    return _react2.default.createElement('div', null, _react2.default.createElement('h1', null, 'App'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/about' }, 'About')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/inbox' }, 'Inbox'))), this.props.children);
+	    return _react2.default.createElement('div', null, _react2.default.createElement(_reactRouter.Link, { to: '/' }, _react2.default.createElement('h1', null, 'App')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/about' }, 'About')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/inbox' }, 'Inbox'))), this.props.children);
 	  }
 	});
 
 	var About = _react2.default.createClass({
 	  displayName: 'About',
 	  render: function render() {
-	    return _react2.default.createElement('h3', null, 'About');
+	    return _react2.default.createElement('div', null, _react2.default.createElement('h3', null, 'About'), _react2.default.createElement('article', { className: 'article' }, _react2.default.createElement('p', null, 'But wait, you might be saying. Why would I want to do something disgusting like pull my CSS into my JavaScript files? Don\'t I want to separate my concerns?'), _react2.default.createElement('p', null, 'That\'s the beauty of writing modular views in JavaScript. Because you\'re managing dependencies on a per-component basis, you\'re only pulling in what you need instead of managing some sort of master app.scss manifest that lists every file you\'ve created. If you\'re already using a methodology like BEM, SMACSS, or SUIT, this is a logical next step.'), _react2.default.createElement('p', null, 'Ultimately, you are separating your concerns. Instead of keeing your HTML, CSS, and JavaScript as separate as possible, the goal is to break your app into small, modular components and keep those as separate as possible. It\'s a different way of writing code, but it can definitely make large applications easier to manage.')));
 	  }
 	});
 
@@ -179,9 +181,16 @@
 	  }
 	});
 
-	(0, _reactDom.render)(_react2.default.createElement(_reactRouter.Router, null, _react2.default.createElement(_reactRouter.Route, { path: '/', component: App }, _react2.default.createElement(_reactRouter.Route, { path: 'about', component: About }), _react2.default.createElement(_reactRouter.Route, { path: 'inbox', component: Inbox }, _react2.default.createElement(_reactRouter.Route, { path: 'messages/:id', component: Message })))), document.body);
+	var Dashboard = _react2.default.createClass({
+	  displayName: 'Dashboard',
+	  render: function render() {
+	    return _react2.default.createElement('div', null, 'Welcome to the app!');
+	  }
+	});
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/matthew/projects/code/snippets/react-app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "app.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	(0, _reactDom.render)(_react2.default.createElement(_reactRouter.Router, null, _react2.default.createElement(_reactRouter.Route, { path: '/', component: App }, _react2.default.createElement(_reactRouter.IndexRoute, { component: Dashboard }), _react2.default.createElement(_reactRouter.Route, { path: 'about', component: About }), _react2.default.createElement(_reactRouter.Route, { path: 'inbox', component: Inbox }, _react2.default.createElement(_reactRouter.Route, { path: 'messages/:id', component: Message })))), document.getElementById('react'));
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/matthew/projects/code/hackz/application/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 3 */
@@ -24235,6 +24244,12 @@
 
 	exports['default'] = useBasename;
 	module.exports = exports['default'];
+
+/***/ },
+/* 210 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
